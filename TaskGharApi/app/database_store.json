@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Ram Bahadur Thapa",
+        "experience": "5 years",
+        "rating": 4.9,
+        "jobs": 142,
+        "rate": "500/hr",
+        "status": "Available",
+        "verified": true,
+        "category": "Plumbing"
+    },
+    {
+        "name": "Shyam Krishna Shrestha",
+        "experience": "3 years",
+        "rating": 4.7,
+        "jobs": 89,
+        "rate": "450/hr",
+        "status": "Available",
+        "verified": true,
+        "category": "Plumbing"
+    },
+    {
+        "name": "Sita Kumari Chaudhary",
+        "experience": "4 years",
+        "rating": 4.8,
+        "jobs": 112,
+        "rate": "600/hr",
+        "status": "Busy",
+        "verified": false,
+        "category": "Home Cleaning"
+    },
+    {
+        "name": "Deepak Raj Sharma",
+        "experience": "7 years",
+        "rating": 5.0,
+        "jobs": 210,
+        "rate": "700/hr",
+        "status": "Available",
+        "verified": true,
+        "category": "Electrical"
+    }
+]

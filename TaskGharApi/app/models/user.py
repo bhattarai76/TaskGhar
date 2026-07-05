@@ -1,39 +1,22 @@
-from pydantic import BaseModel, EmailStr, Field
-from typing import Literal
+# app/models/user.py
+from pydantic import BaseModel, EmailStr
+from typing import Optional
 
 class UserRegisterSchema(BaseModel):
-    # Validates that full name is a string and trims whitespace
-    name: str = Field(..., min_length=2, max_length=50)
-    
-    # Validates proper email format (e.g., example@domain.com)
+    name: str
     email: EmailStr
+    password: str
+    role: str  # This will be either "customer" or "tasker"
     
-    # Validates that the password is safe and at least 6 characters long
-    password: str = Field(..., min_length=6)
-    
-    # Restricts account types exclusively to 'customer' or 'provider'
-    role: Literal["customer", "provider"]
-
-    class Config:
-        json_schema_extra = {
-            "example": {
-                "name": "Ram Bahadur",
-                "email": "ram@taskghar.com",
-                "password": "securepassword123",
-                "role": "customer"
-            }
-        }
-        
+    # Optional fields needed ONLY if role is "tasker"
+    category: Optional[str] = None
+    rate: Optional[str] = None
+    experience: Optional[str] = None
+    status: Optional[str] = "Available"
+    jobs: Optional[int] = 0
+    rating: Optional[float] = 4.5
+    verified: Optional[bool] = False
 
 class UserLoginSchema(BaseModel):
     email: EmailStr
     password: str
-
-    class Config:
-        json_schema_extra = {
-            "example": {
-                "email": "ram@taskghar.com",
-                "password": "securepassword123"
-            }
-        }
-        
